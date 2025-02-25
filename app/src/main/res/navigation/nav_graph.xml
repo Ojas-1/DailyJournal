@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/signIn">
+
+    <fragment
+        android:id="@+id/signIn"
+        android:name="com.example.dailyjournal.signIn"
+        android:label="fragment_signin"
+        tools:layout="@layout/fragment_signin" >
+        <action
+            android:id="@+id/action_signIn_to_createAcountFragment"
+            app:destination="@id/createAcountFragment" />
+        <action
+            android:id="@+id/action_signIn_to_welcomeScreen2"
+            app:destination="@id/welcomeScreen2" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAcountFragment"
+        android:name="com.example.dailyjournal.CreateAcountFragment"
+        android:label="fragment_account_create"
+        tools:layout="@layout/fragment_account_create" >
+        <action
+            android:id="@+id/action_createAcountFragment_to_signIn"
+            app:destination="@id/signIn" />
+        <action
+            android:id="@+id/action_createAcountFragment_to_welcomeScreen2"
+            app:destination="@id/welcomeScreen2" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeScreen2"
+        android:name="com.example.dailyjournal.WelcomeScreen"
+        android:label="WelcomeScreen" >
+        <action
+            android:id="@+id/action_welcomeScreen2_to_signIn"
+            app:destination="@id/signIn" />
+        <action
+            android:id="@+id/action_welcomeScreen2_to_createJournal"
+            app:destination="@id/createJournal" />
+        <action
+            android:id="@+id/action_welcomeScreen2_to_journalVIew"
+            app:destination="@id/journalVIew" />
+    </fragment>
+    <fragment
+        android:id="@+id/createJournal"
+        android:name="com.example.dailyjournal.CreateJournal"
+        android:label="CreateJournal" >
+        <action
+            android:id="@+id/action_createJournal_to_welcomeScreen2"
+            app:destination="@id/welcomeScreen2" />
+    </fragment>
+    <fragment
+        android:id="@+id/journalVIew"
+        android:name="com.example.dailyjournal.JournalVIew"
+        android:label="JournalVIew" >
+        <action
+            android:id="@+id/action_journalVIew_to_welcomeScreen2"
+            app:destination="@id/welcomeScreen2" />
+    </fragment>
+</navigation>
